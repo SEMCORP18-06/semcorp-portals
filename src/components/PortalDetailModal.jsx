@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, ExternalLink, ShieldCheck, CheckCircle2, Copy, Check } from 'lucide-react';
+import { X, ExternalLink, CheckCircle2, Copy, Check } from 'lucide-react';
 
 export default function PortalDetailModal({ portal, onClose }) {
   const [copied, setCopied] = React.useState(false);
@@ -20,8 +20,6 @@ export default function PortalDetailModal({ portal, onClose }) {
             <span
               className="portal-code-badge"
               style={{
-                backgroundColor: portal.badgeColor,
-                color: portal.accentColor,
                 fontSize: '0.85rem'
               }}
             >
@@ -86,7 +84,7 @@ export default function PortalDetailModal({ portal, onClose }) {
             type="button" 
             className="icon-btn" 
             onClick={handleCopyLink}
-            style={{ width: 'auto', padding: '0 1rem', display: 'flex', gap: '0.5rem' }}
+            style={{ width: 'auto', padding: '0 1.25rem', display: 'flex', gap: '0.5rem', borderRadius: '12px' }}
           >
             {copied ? <Check size={16} style={{ color: '#10b981' }} /> : <Copy size={16} />}
             <span>{copied ? 'Link Copied!' : 'Copy Link'}</span>
@@ -96,8 +94,11 @@ export default function PortalDetailModal({ portal, onClose }) {
             href={portal.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="primary-btn"
-            style={{ background: portal.accentColor, color: '#090d16' }}
+            className="modal-launch-btn"
+            style={{
+              '--card-accent': portal.accentColor,
+              '--launch-bg-light': portal.launchBgLight
+            }}
           >
             <span>Launch External Portal</span>
             <ExternalLink size={16} />

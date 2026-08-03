@@ -877,22 +877,29 @@ button {
   gap: 0.75rem;
 }
 
+/* Button & Modal Launch Styling Fixes */
+.modal-launch-btn,
 .launch-btn {
   flex: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  border-radius: var(--radius-sm);
+  gap: 0.6rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 12px;
   background: var(--card-accent, var(--primary-cyan));
   color: #090d16;
   font-weight: 800;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
+  line-height: 1;
   transition: var(--transition-fast);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
 }
 
+[data-theme='light'] .modal-launch-btn,
 [data-theme='light'] .launch-btn {
   background: var(--launch-bg-light, linear-gradient(135deg, #0284c7 0%, #0369a1 100%));
   color: #ffffff;
@@ -900,12 +907,14 @@ button {
   box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
 }
 
+.modal-launch-btn:hover,
 .launch-btn:hover {
   transform: translateY(-2px);
   filter: brightness(1.1);
   box-shadow: 0 6px 20px var(--card-accent, var(--primary-cyan));
 }
 
+[data-theme='light'] .modal-launch-btn:hover,
 [data-theme='light'] .launch-btn:hover {
   filter: brightness(1.08);
   box-shadow: 0 8px 22px rgba(15, 23, 42, 0.22);
@@ -914,7 +923,7 @@ button {
 .action-icon-btn {
   width: 42px;
   height: 42px;
-  border-radius: var(--radius-sm);
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
@@ -1059,10 +1068,11 @@ button {
 }
 
 .modal-footer {
-  padding: 1rem 1.5rem;
+  padding: 1.25rem 1.5rem;
   border-top: 1px solid var(--border-color);
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 0.75rem;
 }
 
