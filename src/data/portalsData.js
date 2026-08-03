@@ -1,0 +1,138 @@
+export const INITIAL_PORTALS = [
+  {
+    id: 'enquiry-portal',
+    name: 'Enquiry Portal',
+    code: 'ENQ',
+    category: 'Sales & Enquiries',
+    categoryKey: 'sales',
+    url: 'https://semcorpemp.vercel.app/',
+    image: '/assets/enquiry_portal.jpg',
+    accentColor: '#00f2fe',
+    accentLight: '#0284c7',
+    badgeColor: 'rgba(0, 242, 254, 0.15)',
+    badgeColorLight: '#e0f2fe',
+    borderColor: 'rgba(0, 242, 254, 0.3)',
+    borderColorLight: '#bae6fd',
+    launchBgLight: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
+    status: 'Operational',
+    uptime: '99.98%',
+    description: 'Central portal for processing customer enquiries, managing sales leads, tracking employee follow-ups, and monitoring client engagement workflows.',
+    features: [
+      'Customer Enquiry Tracking',
+      'Employee Support Desk',
+      'Lead Assignment & SLA Routing',
+      'Real-time Status Dashboards'
+    ],
+    quickLinks: [
+      { label: 'New Enquiry', path: 'https://semcorpemp.vercel.app/' },
+      { label: 'Track Status', path: 'https://semcorpemp.vercel.app/' },
+      { label: 'Client Directory', path: 'https://semcorpemp.vercel.app/' }
+    ],
+    pinned: true,
+    isOfficial: true
+  },
+  {
+    id: 'service-portal',
+    name: 'Service Portal',
+    code: 'SVC',
+    category: 'Technical & Field Support',
+    categoryKey: 'service',
+    url: 'https://service.semcogroups.com/',
+    image: '/assets/service_portal.jpg',
+    accentColor: '#10b981',
+    accentLight: '#059669',
+    badgeColor: 'rgba(16, 185, 129, 0.15)',
+    badgeColorLight: '#dcfce7',
+    borderColor: 'rgba(16, 185, 129, 0.3)',
+    borderColorLight: '#a7f3d0',
+    launchBgLight: 'linear-gradient(135deg, #059669 0%, #047857 100%)',
+    status: 'Operational',
+    uptime: '99.95%',
+    description: 'Comprehensive field service management hub for reporting machinery diagnostics, equipment maintenance schedules, and technical support ticketing.',
+    features: [
+      'Field Maintenance Ticketing',
+      'Equipment Diagnostics Telemetry',
+      'Technician Dispatch Scheduling',
+      'Warranty & Spares Tracking'
+    ],
+    quickLinks: [
+      { label: 'File Ticket', path: 'https://service.semcogroups.com/' },
+      { label: 'Equipment Logs', path: 'https://service.semcogroups.com/' },
+      { label: 'Service Schedule', path: 'https://service.semcogroups.com/' }
+    ],
+    pinned: true,
+    isOfficial: true
+  },
+  {
+    id: 'rfq-portal',
+    name: 'RFQ Portal',
+    code: 'RFQ',
+    category: 'Procurement & Supply Chain',
+    categoryKey: 'procurement',
+    url: 'https://semco-groups-procurement.vercel.app/',
+    image: '/assets/rfq_portal.jpg',
+    accentColor: '#8b5cf6',
+    accentLight: '#7c3aed',
+    badgeColor: 'rgba(139, 92, 246, 0.15)',
+    badgeColorLight: '#f3e8ff',
+    borderColor: 'rgba(139, 92, 246, 0.3)',
+    borderColorLight: '#e9d5ff',
+    launchBgLight: 'linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)',
+    status: 'Operational',
+    uptime: '100%',
+    description: 'Strategic procurement portal for Request for Quotation (RFQ) submissions, vendor biddings, supply chain material comparisons, and PO approvals.',
+    features: [
+      'RFQ Creation & Bidding Hub',
+      'Vendor Quote Evaluation',
+      'Purchase Order Workflows',
+      'Material Bill of Quantities'
+    ],
+    quickLinks: [
+      { label: 'Create RFQ', path: 'https://semco-groups-procurement.vercel.app/' },
+      { label: 'Vendor Bids', path: 'https://semco-groups-procurement.vercel.app/' },
+      { label: 'PO Approval Desk', path: 'https://semco-groups-procurement.vercel.app/' }
+    ],
+    pinned: true,
+    isOfficial: true
+  },
+  {
+    id: 'hrms-portal',
+    name: 'HRMS Portal',
+    code: 'HRM',
+    category: 'Human Capital & People Ops',
+    categoryKey: 'hrms',
+    url: 'https://semcorp-hrms-portal.vercel.app/',
+    image: '/assets/hrms_portal.jpg',
+    accentColor: '#f97316',
+    accentLight: '#ea580c',
+    badgeColor: 'rgba(249, 115, 22, 0.15)',
+    badgeColorLight: '#ffedd5',
+    borderColor: 'rgba(249, 115, 22, 0.3)',
+    borderColorLight: '#fed7aa',
+    launchBgLight: 'linear-gradient(135deg, #ea580c 0%, #c2410c 100%)',
+    status: 'Operational',
+    uptime: '99.92%',
+    description: 'Employee self-service and Human Resource Management System for attendance, leave management, digital payslips, performance metrics, and team directory.',
+    features: [
+      'Leave & Attendance Portal',
+      'Payroll & Salary Slips',
+      'Employee Directory & Org Tree',
+      'Performance Review System'
+    ],
+    quickLinks: [
+      { label: 'Apply Leave', path: 'https://semcorp-hrms-portal.vercel.app/' },
+      { label: 'My Payslips', path: 'https://semcorp-hrms-portal.vercel.app/' },
+      { label: 'Team Directory', path: 'https://semcorp-hrms-portal.vercel.app/' }
+    ],
+    pinned: true,
+    isOfficial: true
+  }
+];
+
+export const CATEGORIES = [
+  { key: 'all', label: 'All Portals', icon: 'LayoutGrid' },
+  { key: 'sales', label: 'Sales & Enquiries', icon: 'MessageSquare' },
+  { key: 'service', label: 'Technical Support', icon: 'Wrench' },
+  { key: 'procurement', label: 'Procurement & RFQ', icon: 'ShoppingBag' },
+  { key: 'hrms', label: 'Human Resources', icon: 'Users' }
+];
