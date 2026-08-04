@@ -3,23 +3,10 @@ import {
   ExternalLink, 
   Star, 
   Info, 
-  HelpCircle, 
-  Wrench, 
-  FileText, 
-  Users, 
-  Globe 
+  Sparkles 
 } from 'lucide-react';
 
-const PORTAL_ICONS = {
-  HelpCircle: HelpCircle,
-  Wrench: Wrench,
-  FileText: FileText,
-  Users: Users
-};
-
 export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
-  const IconComponent = PORTAL_ICONS[portal.iconName] || Globe;
-
   const handlePin = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -28,7 +15,7 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
 
   return (
     <div
-      className="portal-card compact-card-v2"
+      className={`portal-card banner-symbol-card ${portal.isFlagship ? 'flagship-superior-card' : ''}`}
       style={{
         '--card-accent': portal.accentColor,
         '--card-accent-light': portal.accentLight || portal.accentColor,
@@ -40,19 +27,28 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
     >
       <div className="card-accent-top-strip" />
 
-      <div className="card-header-row">
-        <div className="portal-symbol-icon-wrapper">
-          {portal.symbolImg ? (
-            <img src={portal.symbolImg} alt={portal.name} className="portal-symbol-img" />
-          ) : (
-            <IconComponent size={26} className="portal-symbol-icon" />
-          )}
-        </div>
+      {/* Top Banner Graphic Symbol Header */}
+      <div className="card-symbol-banner-wrapper">
+        <img
+          src={portal.bannerImg}
+          alt={`SEMCORP ${portal.name}`}
+          className="card-symbol-banner-img"
+        />
+        <div className="card-banner-gradient-overlay" />
 
-        <div className="card-header-badges">
-          <span className="portal-code-badge">
-            {portal.code}
-          </span>
+        <div className="banner-top-actions">
+          <div className="banner-badges">
+            <span className="portal-code-badge">
+              {portal.code}
+            </span>
+            {portal.isFlagship && (
+              <span className="flagship-superior-badge">
+                <Sparkles size={12} />
+                <span>Flagship</span>
+              </span>
+            )}
+          </div>
+
           <button
             className={`pin-btn ${portal.pinned ? 'pinned' : ''}`}
             onClick={handlePin}
@@ -63,7 +59,7 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
         </div>
       </div>
 
-      <div className="card-title-section">
+      <div className="card-body-container">
         <h3 className="portal-title-heading">
           <a
             href={portal.url}
@@ -75,26 +71,26 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
             <ExternalLink size={17} className="anchor-external-icon" />
           </a>
         </h3>
-      </div>
 
-      <div className="card-actions-footer">
-        <a
-          href={portal.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="launch-btn"
-        >
-          <span>Launch Portal</span>
-          <ExternalLink size={15} />
-        </a>
+        <div className="card-actions-footer">
+          <a
+            href={portal.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="launch-btn"
+          >
+            <span>Launch Portal</span>
+            <ExternalLink size={15} />
+          </a>
 
-        <button
-          className="action-icon-btn"
-          onClick={() => onOpenDetail(portal)}
-          title="View Details"
-        >
-          <Info size={18} />
-        </button>
+          <button
+            className="action-icon-btn"
+            onClick={() => onOpenDetail(portal)}
+            title="View Details"
+          >
+            <Info size={18} />
+          </button>
+        </div>
       </div>
     </div>
   );

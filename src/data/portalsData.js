@@ -6,6 +6,7 @@ export const INITIAL_PORTALS = [
     category: 'Sales & Enquiries',
     categoryKey: 'sales',
     url: 'https://semcorpemp.vercel.app/',
+    bannerImg: '/assets/semcorp_enquiry_banner.jpg',
     symbolImg: '/assets/semcorp_enquiry_symbol.jpg',
     iconName: 'HelpCircle',
     accentColor: '#00f2fe',
@@ -25,7 +26,8 @@ export const INITIAL_PORTALS = [
       'Real-time Status Dashboards'
     ],
     pinned: true,
-    isOfficial: true
+    isOfficial: true,
+    isFlagship: true
   },
   {
     id: 'service-portal',
@@ -34,6 +36,7 @@ export const INITIAL_PORTALS = [
     category: 'Technical & Field Support',
     categoryKey: 'service',
     url: 'https://service.semcogroups.com/',
+    bannerImg: '/assets/semcorp_service_banner.jpg',
     symbolImg: '/assets/semcorp_service_symbol.jpg',
     iconName: 'Wrench',
     accentColor: '#10b981',
@@ -53,7 +56,8 @@ export const INITIAL_PORTALS = [
       'Warranty & Spares Tracking'
     ],
     pinned: true,
-    isOfficial: true
+    isOfficial: true,
+    isFlagship: true
   },
   {
     id: 'rfq-portal',
@@ -62,6 +66,7 @@ export const INITIAL_PORTALS = [
     category: 'Procurement & Supply Chain',
     categoryKey: 'procurement',
     url: 'https://semco-groups-procurement.vercel.app/',
+    bannerImg: '/assets/semcorp_rfq_banner.jpg',
     symbolImg: '/assets/semcorp_rfq_symbol.jpg',
     iconName: 'FileText',
     accentColor: '#8b5cf6',
@@ -81,7 +86,8 @@ export const INITIAL_PORTALS = [
       'Material Bill of Quantities'
     ],
     pinned: true,
-    isOfficial: true
+    isOfficial: true,
+    isFlagship: false
   },
   {
     id: 'hrms-portal',
@@ -90,6 +96,7 @@ export const INITIAL_PORTALS = [
     category: 'Human Capital & People Ops',
     categoryKey: 'hrms',
     url: 'https://semcorp-hrms-portal.vercel.app/',
+    bannerImg: '/assets/semcorp_hrms_banner.jpg',
     symbolImg: '/assets/semcorp_hrms_symbol.jpg',
     iconName: 'Users',
     accentColor: '#f97316',
@@ -109,7 +116,8 @@ export const INITIAL_PORTALS = [
       'Performance Review System'
     ],
     pinned: true,
-    isOfficial: true
+    isOfficial: true,
+    isFlagship: false
   }
 ];
 

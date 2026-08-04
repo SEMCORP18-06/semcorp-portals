@@ -3,26 +3,13 @@ import {
   ExternalLink, 
   Star, 
   Info, 
-  HelpCircle, 
-  Wrench, 
-  FileText, 
-  Users, 
-  Globe 
+  Sparkles 
 } from 'lucide-react';
 
-const PORTAL_ICONS = {
-  HelpCircle: HelpCircle,
-  Wrench: Wrench,
-  FileText: FileText,
-  Users: Users
-};
-
 export default function PortalListItem({ portal, onTogglePin, onOpenDetail }) {
-  const IconComponent = PORTAL_ICONS[portal.iconName] || Globe;
-
   return (
     <div 
-      className="portal-list-item"
+      className={`portal-list-item ${portal.isFlagship ? 'flagship-superior-item' : ''}`}
       style={{ 
         '--card-accent': portal.accentColor,
         '--card-accent-light': portal.accentLight || portal.accentColor,
@@ -31,12 +18,8 @@ export default function PortalListItem({ portal, onTogglePin, onOpenDetail }) {
       }}
     >
       <div className="list-item-main">
-        <div className="portal-symbol-icon-wrapper list-symbol">
-          {portal.symbolImg ? (
-            <img src={portal.symbolImg} alt={portal.name} className="portal-symbol-img" />
-          ) : (
-            <IconComponent size={22} className="portal-symbol-icon" />
-          )}
+        <div className="list-item-banner-thumbnail">
+          <img src={portal.symbolImg || portal.bannerImg} alt={portal.name} className="list-thumbnail-img" />
         </div>
 
         <div className="list-item-text">
@@ -59,6 +42,13 @@ export default function PortalListItem({ portal, onTogglePin, onOpenDetail }) {
         <span className="portal-code-badge">
           {portal.code}
         </span>
+
+        {portal.isFlagship && (
+          <span className="flagship-superior-badge">
+            <Sparkles size={12} />
+            <span>Flagship</span>
+          </span>
+        )}
 
         <button
           className={`pin-btn ${portal.pinned ? 'pinned' : ''}`}
