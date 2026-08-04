@@ -461,7 +461,7 @@ button {
   box-shadow: 0 0 12px rgba(2, 132, 199, 0.15);
 }
 
-/* Grid Layout (100% Equal columns for all cards) */
+/* Grid Layout */
 .portals-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
@@ -474,7 +474,7 @@ button {
   gap: 1rem;
 }
 
-/* Equal-Tier 3D Symbol Banner Card Component */
+/* Equal-Tier 3D Shield Crest Banner Card */
 .portal-card.banner-symbol-card {
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -519,13 +519,13 @@ button {
   border-color: var(--card-accent-light, #0284c7);
 }
 
-/* Banner Header Symbol Graphic (100% EQUAL 150px height for all cards) */
+/* Banner Header Shield Crest Image (Equal 175px height) */
 .card-symbol-banner-wrapper {
   position: relative;
-  height: 155px;
+  height: 175px;
   width: 100%;
   overflow: hidden;
-  background: #000000;
+  background: #090d16;
 }
 
 .card-symbol-banner-img {
@@ -543,7 +543,7 @@ button {
 .card-banner-gradient-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(9, 13, 22, 0.2) 0%, rgba(9, 13, 22, 0.85) 100%);
+  background: linear-gradient(180deg, rgba(9, 13, 22, 0.15) 0%, rgba(9, 13, 22, 0.85) 100%);
   pointer-events: none;
 }
 
@@ -575,7 +575,7 @@ button {
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.06em;
-  background: rgba(9, 13, 22, 0.8);
+  background: rgba(9, 13, 22, 0.85);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
@@ -585,7 +585,7 @@ button {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(9, 13, 22, 0.7);
+  background: rgba(9, 13, 22, 0.75);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;

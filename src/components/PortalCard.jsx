@@ -26,7 +26,7 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
     >
       <div className="card-accent-top-strip" />
 
-      {/* Top 3D Symbol Banner Graphic Header */}
+      {/* Top 3D Metallic Shield Crest Header Banner */}
       <div className="card-symbol-banner-wrapper">
         <img
           src={portal.bannerImg}
