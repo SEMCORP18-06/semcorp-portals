@@ -32,7 +32,11 @@ export default function PortalListItem({ portal, onTogglePin, onOpenDetail }) {
     >
       <div className="list-item-main">
         <div className="portal-symbol-icon-wrapper list-symbol">
-          <IconComponent size={22} className="portal-symbol-icon" />
+          {portal.symbolImg ? (
+            <img src={portal.symbolImg} alt={portal.name} className="portal-symbol-img" />
+          ) : (
+            <IconComponent size={22} className="portal-symbol-icon" />
+          )}
         </div>
 
         <div className="list-item-text">

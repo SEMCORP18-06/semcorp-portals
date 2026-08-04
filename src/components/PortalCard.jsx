@@ -42,7 +42,11 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
 
       <div className="card-header-row">
         <div className="portal-symbol-icon-wrapper">
-          <IconComponent size={26} className="portal-symbol-icon" />
+          {portal.symbolImg ? (
+            <img src={portal.symbolImg} alt={portal.name} className="portal-symbol-img" />
+          ) : (
+            <IconComponent size={26} className="portal-symbol-icon" />
+          )}
         </div>
 
         <div className="card-header-badges">
