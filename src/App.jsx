@@ -15,9 +15,9 @@ export default function App() {
     return localStorage.getItem('semcorp_theme') || 'dark';
   });
 
-  // Portals State with storage version v14 to force live cache refresh for user shield crest banners
+  // Portals State with storage version v15 to force live cache refresh for object-fit contain image rendering & Service SEMCORP fix
   const [portals, setPortals] = useState(() => {
-    const saved = localStorage.getItem('semcorp_portals_v14');
+    const saved = localStorage.getItem('semcorp_portals_v15');
     if (saved) {
       try {
         return JSON.parse(saved);
@@ -44,9 +44,9 @@ export default function App() {
     localStorage.setItem('semcorp_theme', theme);
   }, [theme]);
 
-  // Persist portals to localStorage v14
+  // Persist portals to localStorage v15
   useEffect(() => {
-    localStorage.setItem('semcorp_portals_v14', JSON.stringify(portals));
+    localStorage.setItem('semcorp_portals_v15', JSON.stringify(portals));
   }, [portals]);
 
   // Keyboard shortcut listener ('/' to focus search)

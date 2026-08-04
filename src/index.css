@@ -474,7 +474,7 @@ button {
   gap: 1rem;
 }
 
-/* Equal-Tier 3D Shield Crest Banner Card */
+/* 3D Shield Crest Banner Card Container */
 .portal-card.banner-symbol-card {
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -519,36 +519,40 @@ button {
   border-color: var(--card-accent-light, #0284c7);
 }
 
-/* Banner Header Shield Crest Image (Equal 175px height) */
+/* Banner Header Container & Pristine Contain CSS Sizing */
 .card-symbol-banner-wrapper {
   position: relative;
-  height: 175px;
+  height: 200px;
   width: 100%;
   overflow: hidden;
   background: #090d16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
 }
 
 .card-symbol-banner-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portal-card.banner-symbol-card:hover .card-symbol-banner-img {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .card-banner-gradient-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(9, 13, 22, 0.15) 0%, rgba(9, 13, 22, 0.85) 100%);
+  background: linear-gradient(180deg, rgba(9, 13, 22, 0.1) 0%, rgba(9, 13, 22, 0.65) 100%);
   pointer-events: none;
 }
 
 [data-theme='light'] .card-banner-gradient-overlay {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(15, 23, 42, 0.75) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(15, 23, 42, 0.55) 100%);
 }
 
 .banner-top-actions {
@@ -751,7 +755,8 @@ button {
 .list-thumbnail-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #090d16;
 }
 
 [data-theme='light'] .portal-list-item {
