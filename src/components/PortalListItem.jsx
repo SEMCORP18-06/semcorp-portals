@@ -8,7 +8,7 @@ import {
 export default function PortalListItem({ portal, onTogglePin, onOpenDetail }) {
   return (
     <div 
-      className={`portal-list-item ${portal.isSuperior ? 'superior-list-item' : ''}`}
+      className="portal-list-item"
       style={{ 
         '--card-accent': portal.accentColor,
         '--card-accent-light': portal.accentLight || portal.accentColor,
@@ -17,8 +17,8 @@ export default function PortalListItem({ portal, onTogglePin, onOpenDetail }) {
       }}
     >
       <div className="list-item-main">
-        <div className={`portal-symbol-badge-box list-symbol-box ${portal.isSuperior ? 'superior-badge-box' : ''}`}>
-          <img src={portal.symbolImg} alt={portal.name} className="portal-symbol-emblem-img" />
+        <div className="list-item-banner-thumbnail">
+          <img src={portal.bannerImg} alt={portal.name} className="list-thumbnail-img" />
         </div>
 
         <div className="list-item-text">

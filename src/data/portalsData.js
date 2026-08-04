@@ -13,8 +13,8 @@ export const INITIAL_PORTALS = [
     accentLight: '#0284c7',
     badgeColor: 'rgba(0, 242, 254, 0.15)',
     badgeColorLight: '#e0f2fe',
-    borderColor: 'rgba(0, 242, 254, 0.4)',
-    borderColorLight: '#38bdf8',
+    borderColor: 'rgba(0, 242, 254, 0.3)',
+    borderColorLight: '#bae6fd',
     launchBgLight: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
     status: 'Operational',
     uptime: '99.98%',
@@ -26,8 +26,7 @@ export const INITIAL_PORTALS = [
       'Real-time Status Dashboards'
     ],
     pinned: true,
-    isOfficial: true,
-    isSuperior: true
+    isOfficial: true
   },
   {
     id: 'service-portal',
@@ -43,8 +42,8 @@ export const INITIAL_PORTALS = [
     accentLight: '#059669',
     badgeColor: 'rgba(16, 185, 129, 0.15)',
     badgeColorLight: '#dcfce7',
-    borderColor: 'rgba(16, 185, 129, 0.4)',
-    borderColorLight: '#34d399',
+    borderColor: 'rgba(16, 185, 129, 0.3)',
+    borderColorLight: '#a7f3d0',
     launchBgLight: 'linear-gradient(135deg, #059669 0%, #047857 100%)',
     status: 'Operational',
     uptime: '99.95%',
@@ -56,8 +55,7 @@ export const INITIAL_PORTALS = [
       'Warranty & Spares Tracking'
     ],
     pinned: true,
-    isOfficial: true,
-    isSuperior: true
+    isOfficial: true
   },
   {
     id: 'rfq-portal',
@@ -73,7 +71,7 @@ export const INITIAL_PORTALS = [
     accentLight: '#7c3aed',
     badgeColor: 'rgba(139, 92, 246, 0.15)',
     badgeColorLight: '#f3e8ff',
-    borderColor: 'rgba(139, 92, 246, 0.25)',
+    borderColor: 'rgba(139, 92, 246, 0.3)',
     borderColorLight: '#e9d5ff',
     launchBgLight: 'linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)',
     status: 'Operational',
@@ -86,8 +84,7 @@ export const INITIAL_PORTALS = [
       'Material Bill of Quantities'
     ],
     pinned: true,
-    isOfficial: true,
-    isSuperior: false
+    isOfficial: true
   },
   {
     id: 'hrms-portal',
@@ -103,7 +100,7 @@ export const INITIAL_PORTALS = [
     accentLight: '#ea580c',
     badgeColor: 'rgba(249, 115, 22, 0.15)',
     badgeColorLight: '#ffedd5',
-    borderColor: 'rgba(249, 115, 22, 0.25)',
+    borderColor: 'rgba(249, 115, 22, 0.3)',
     borderColorLight: '#fed7aa',
     launchBgLight: 'linear-gradient(135deg, #ea580c 0%, #c2410c 100%)',
     status: 'Operational',
@@ -116,8 +113,7 @@ export const INITIAL_PORTALS = [
       'Performance Review System'
     ],
     pinned: true,
-    isOfficial: true,
-    isSuperior: false
+    isOfficial: true
   }
 ];
 
