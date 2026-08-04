@@ -17,8 +17,8 @@ export default function PortalListItem({ portal, onTogglePin, onOpenDetail }) {
       }}
     >
       <div className="list-item-main">
-        <div className="list-item-banner-thumbnail">
-          <img src={portal.bannerImg} alt={portal.name} className="list-thumbnail-img" />
+        <div className={`portal-symbol-badge-box list-symbol-box ${portal.isSuperior ? 'superior-badge-box' : ''}`}>
+          <img src={portal.symbolImg} alt={portal.name} className="portal-symbol-emblem-img" />
         </div>
 
         <div className="list-item-text">
