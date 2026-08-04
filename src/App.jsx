@@ -15,13 +15,12 @@ export default function App() {
     return localStorage.getItem('semcorp_theme') || 'dark';
   });
 
-  // Portals State
+  // Portals State with storage version v3 to clear cached old layout
   const [portals, setPortals] = useState(() => {
-    const saved = localStorage.getItem('semcorp_portals');
+    const saved = localStorage.getItem('semcorp_portals_v3');
     if (saved) {
       try {
-        const parsed = JSON.parse(saved);
-        return parsed.map((p) => (p.id === 'rfq-portal' ? { ...p, name: 'RFQ Portal' } : p));
+        return JSON.parse(saved);
       } catch (e) {
         console.error('Failed to parse saved portals:', e);
       }
@@ -47,7 +46,7 @@ export default function App() {
 
   // Persist portals to localStorage
   useEffect(() => {
-    localStorage.setItem('semcorp_portals', JSON.stringify(portals));
+    localStorage.setItem('semcorp_portals_v3', JSON.stringify(portals));
   }, [portals]);
 
   // Keyboard shortcut listener ('/' to focus search)
