@@ -14,7 +14,7 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
 
   return (
     <div
-      className={`portal-card symbol-focused-card ${portal.isSuperior ? 'superior-symbol-card' : ''}`}
+      className={`portal-card banner-symbol-card ${portal.isSuperior ? 'superior-portal-card' : ''}`}
       style={{
         '--card-accent': portal.accentColor,
         '--card-accent-light': portal.accentLight || portal.accentColor,
@@ -26,20 +26,21 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
     >
       <div className="card-accent-top-strip" />
 
-      {/* Symbol Badge & Header Actions */}
-      <div className="card-symbol-header-row">
-        <div className={`portal-symbol-badge-box ${portal.isSuperior ? 'superior-badge-box' : ''}`}>
-          <img
-            src={portal.symbolImg}
-            alt={`SEMCORP ${portal.name} Symbol`}
-            className="portal-symbol-emblem-img"
-          />
-        </div>
+      {/* 3D Symbol Banner Image Header */}
+      <div className="card-symbol-banner-wrapper">
+        <img
+          src={portal.bannerImg}
+          alt={`SEMCORP ${portal.name}`}
+          className="card-symbol-banner-img"
+        />
+        <div className="card-banner-gradient-overlay" />
 
-        <div className="card-header-actions">
-          <span className="portal-code-badge">
-            {portal.code}
-          </span>
+        <div className="banner-top-actions">
+          <div className="banner-badges">
+            <span className="portal-code-badge">
+              {portal.code}
+            </span>
+          </div>
 
           <button
             className={`pin-btn ${portal.pinned ? 'pinned' : ''}`}
@@ -51,7 +52,7 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
         </div>
       </div>
 
-      <div className="card-body-section">
+      <div className="card-body-container">
         <h3 className="portal-title-heading">
           <a
             href={portal.url}
@@ -63,26 +64,26 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
             <ExternalLink size={17} className="anchor-external-icon" />
           </a>
         </h3>
-      </div>
 
-      <div className="card-actions-footer">
-        <a
-          href={portal.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="launch-btn"
-        >
-          <span>Launch Portal</span>
-          <ExternalLink size={15} />
-        </a>
+        <div className="card-actions-footer">
+          <a
+            href={portal.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="launch-btn"
+          >
+            <span>Launch Portal</span>
+            <ExternalLink size={15} />
+          </a>
 
-        <button
-          className="action-icon-btn"
-          onClick={() => onOpenDetail(portal)}
-          title="View Details"
-        >
-          <Info size={18} />
-        </button>
+          <button
+            className="action-icon-btn"
+            onClick={() => onOpenDetail(portal)}
+            title="View Details"
+          >
+            <Info size={18} />
+          </button>
+        </div>
       </div>
     </div>
   );
