@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   ExternalLink, 
   Star, 
@@ -28,7 +28,7 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
 
   return (
     <div
-      className="portal-card compact-card"
+      className="portal-card compact-card-v2"
       style={{
         '--card-accent': portal.accentColor,
         '--card-accent-light': portal.accentLight || portal.accentColor,
@@ -40,12 +40,12 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
     >
       <div className="card-accent-top-strip" />
 
-      <div className="compact-card-header">
+      <div className="card-header-row">
         <div className="portal-symbol-icon-wrapper">
-          <IconComponent size={24} className="portal-symbol-icon" />
+          <IconComponent size={26} className="portal-symbol-icon" />
         </div>
 
-        <div className="compact-header-actions">
+        <div className="card-header-badges">
           <span className="portal-code-badge">
             {portal.code}
           </span>
@@ -59,8 +59,8 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
         </div>
       </div>
 
-      <div className="compact-card-body">
-        <h3 className="compact-portal-title">
+      <div className="card-title-section">
+        <h3 className="portal-title-heading">
           <a
             href={portal.url}
             target="_blank"
@@ -68,29 +68,29 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
             className="portal-title-anchor"
           >
             <span>{portal.name}</span>
-            <ExternalLink size={16} className="anchor-external-icon" />
+            <ExternalLink size={17} className="anchor-external-icon" />
           </a>
         </h3>
+      </div>
 
-        <div className="card-actions compact-actions">
-          <a
-            href={portal.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="launch-btn"
-          >
-            <span>Launch Portal</span>
-            <ExternalLink size={15} />
-          </a>
+      <div className="card-actions-footer">
+        <a
+          href={portal.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="launch-btn"
+        >
+          <span>Launch Portal</span>
+          <ExternalLink size={15} />
+        </a>
 
-          <button
-            className="action-icon-btn"
-            onClick={() => onOpenDetail(portal)}
-            title="View Details"
-          >
-            <Info size={18} />
-          </button>
-        </div>
+        <button
+          className="action-icon-btn"
+          onClick={() => onOpenDetail(portal)}
+          title="View Details"
+        >
+          <Info size={18} />
+        </button>
       </div>
     </div>
   );

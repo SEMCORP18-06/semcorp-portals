@@ -22,7 +22,7 @@ export default function PortalListItem({ portal, onTogglePin, onOpenDetail }) {
 
   return (
     <div 
-      className="portal-list-item compact-list-item"
+      className="portal-list-item"
       style={{ 
         '--card-accent': portal.accentColor,
         '--card-accent-light': portal.accentLight || portal.accentColor,
@@ -42,10 +42,10 @@ export default function PortalListItem({ portal, onTogglePin, onOpenDetail }) {
               target="_blank" 
               rel="noopener noreferrer"
               className="portal-title-anchor"
-              style={{ fontSize: '1.15rem' }}
+              style={{ fontSize: '1.2rem' }}
             >
               <span>{portal.name}</span>
-              <ExternalLink size={15} className="anchor-external-icon" />
+              <ExternalLink size={16} className="anchor-external-icon" />
             </a>
           </h3>
         </div>
@@ -77,7 +77,7 @@ export default function PortalListItem({ portal, onTogglePin, onOpenDetail }) {
           target="_blank"
           rel="noopener noreferrer"
           className="launch-btn"
-          style={{ padding: '0.6rem 1.1rem' }}
+          style={{ padding: '0.65rem 1.25rem' }}
         >
           <span>Launch</span>
           <ExternalLink size={14} />
