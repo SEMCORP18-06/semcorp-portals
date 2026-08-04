@@ -15,9 +15,9 @@ export default function App() {
     return localStorage.getItem('semcorp_theme') || 'dark';
   });
 
-  // Portals State with storage version v5 to force live cache refresh
+  // Portals State with storage version v6 to force live cache refresh for 3D symbol layout
   const [portals, setPortals] = useState(() => {
-    const saved = localStorage.getItem('semcorp_portals_v5');
+    const saved = localStorage.getItem('semcorp_portals_v6');
     if (saved) {
       try {
         return JSON.parse(saved);
@@ -44,9 +44,9 @@ export default function App() {
     localStorage.setItem('semcorp_theme', theme);
   }, [theme]);
 
-  // Persist portals to localStorage v5
+  // Persist portals to localStorage v6
   useEffect(() => {
-    localStorage.setItem('semcorp_portals_v5', JSON.stringify(portals));
+    localStorage.setItem('semcorp_portals_v6', JSON.stringify(portals));
   }, [portals]);
 
   // Keyboard shortcut listener ('/' to focus search)
