@@ -2,14 +2,13 @@ import React from 'react';
 import { 
   ExternalLink, 
   Star, 
-  Info, 
-  Sparkles 
+  Info 
 } from 'lucide-react';
 
 export default function PortalListItem({ portal, onTogglePin, onOpenDetail }) {
   return (
     <div 
-      className={`portal-list-item ${portal.isFlagship ? 'flagship-superior-item' : ''}`}
+      className={`portal-list-item ${portal.isSuperior ? 'superior-list-item' : ''}`}
       style={{ 
         '--card-accent': portal.accentColor,
         '--card-accent-light': portal.accentLight || portal.accentColor,
@@ -42,13 +41,6 @@ export default function PortalListItem({ portal, onTogglePin, onOpenDetail }) {
         <span className="portal-code-badge">
           {portal.code}
         </span>
-
-        {portal.isFlagship && (
-          <span className="flagship-superior-badge">
-            <Sparkles size={12} />
-            <span>Flagship</span>
-          </span>
-        )}
 
         <button
           className={`pin-btn ${portal.pinned ? 'pinned' : ''}`}

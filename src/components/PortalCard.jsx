@@ -2,8 +2,7 @@ import React from 'react';
 import { 
   ExternalLink, 
   Star, 
-  Info, 
-  Sparkles 
+  Info 
 } from 'lucide-react';
 
 export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
@@ -15,7 +14,7 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
 
   return (
     <div
-      className={`portal-card banner-symbol-card ${portal.isFlagship ? 'flagship-superior-card' : ''}`}
+      className={`portal-card banner-symbol-card ${portal.isSuperior ? 'superior-portal-card' : ''}`}
       style={{
         '--card-accent': portal.accentColor,
         '--card-accent-light': portal.accentLight || portal.accentColor,
@@ -27,7 +26,7 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
     >
       <div className="card-accent-top-strip" />
 
-      {/* Top Banner Graphic Symbol Header */}
+      {/* Top 3D Symbol Banner Header */}
       <div className="card-symbol-banner-wrapper">
         <img
           src={portal.bannerImg}
@@ -41,12 +40,6 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
             <span className="portal-code-badge">
               {portal.code}
             </span>
-            {portal.isFlagship && (
-              <span className="flagship-superior-badge">
-                <Sparkles size={12} />
-                <span>Flagship</span>
-              </span>
-            )}
           </div>
 
           <button

@@ -507,15 +507,19 @@ button {
   box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
 }
 
-/* Superior Flagship Card Styling (Enquiry & Service) */
-.portal-card.flagship-superior-card {
+/* Visual Superiority for Enquiry & Service Cards (Pure Visuals, No Text Tags) */
+.portal-card.superior-portal-card {
   border-color: var(--card-border-hover, var(--border-hover));
-  box-shadow: 0 10px 30px -10px var(--card-accent, var(--primary-cyan));
+  box-shadow: 0 12px 35px -8px var(--card-accent, var(--primary-cyan));
 }
 
-[data-theme='light'] .portal-card.flagship-superior-card {
+.portal-card.superior-portal-card .card-accent-top-strip {
+  height: 5px;
+}
+
+[data-theme='light'] .portal-card.superior-portal-card {
   border-color: var(--card-accent-light, #0284c7);
-  box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.15);
+  box-shadow: 0 12px 30px -5px rgba(2, 132, 199, 0.18);
 }
 
 .portal-card.banner-symbol-card:hover {
@@ -533,14 +537,15 @@ button {
 /* Banner Header Symbol Graphic */
 .card-symbol-banner-wrapper {
   position: relative;
-  height: 155px;
+  height: 145px;
   width: 100%;
   overflow: hidden;
   background: #000000;
 }
 
-.portal-card.flagship-superior-card .card-symbol-banner-wrapper {
-  height: 175px; /* Larger, superior header for Enquiry & Service */
+/* Superior taller header ratio for Enquiry and Service */
+.portal-card.superior-portal-card .card-symbol-banner-wrapper {
+  height: 175px;
 }
 
 .card-symbol-banner-img {
@@ -594,24 +599,6 @@ button {
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
-}
-
-.flagship-superior-badge {
-  padding: 0.3rem 0.75rem;
-  border-radius: 8px;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  background: rgba(0, 242, 254, 0.2);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--card-accent, var(--primary-cyan));
-  color: var(--card-accent, var(--primary-cyan));
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  box-shadow: 0 0 12px var(--card-accent);
 }
 
 .pin-btn {
@@ -772,7 +759,7 @@ button {
   transition: var(--transition-normal);
 }
 
-.portal-list-item.flagship-superior-item {
+.portal-list-item.superior-list-item {
   border-color: var(--card-border-hover);
 }
 
