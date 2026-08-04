@@ -1,16 +1,24 @@
 import React, { useState } from 'react';
-import { ExternalLink, Star, Copy, Check, Info } from 'lucide-react';
+import { 
+  ExternalLink, 
+  Star, 
+  Info, 
+  HelpCircle, 
+  Wrench, 
+  FileText, 
+  Users, 
+  Globe 
+} from 'lucide-react';
+
+const PORTAL_ICONS = {
+  HelpCircle: HelpCircle,
+  Wrench: Wrench,
+  FileText: FileText,
+  Users: Users
+};
 
 export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyLink = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    navigator.clipboard.writeText(portal.url);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+  const IconComponent = PORTAL_ICONS[portal.iconName] || Globe;
 
   const handlePin = (e) => {
     e.preventDefault();
@@ -20,7 +28,7 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
 
   return (
     <div
-      className="portal-card"
+      className="portal-card compact-card"
       style={{
         '--card-accent': portal.accentColor,
         '--card-accent-light': portal.accentLight || portal.accentColor,
@@ -32,31 +40,27 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
     >
       <div className="card-accent-top-strip" />
 
-      <div className="card-banner">
-        <img
-          src={portal.image || '/assets/enquiry_portal.jpg'}
-          alt={portal.name}
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80';
-          }}
-        />
-        <div className="card-banner-overlay" />
+      <div className="compact-card-header">
+        <div className="portal-symbol-icon-wrapper">
+          <IconComponent size={24} className="portal-symbol-icon" />
+        </div>
 
-        <div className="card-top-badges">
-          <span className="category-tag">{portal.category}</span>
+        <div className="compact-header-actions">
+          <span className="portal-code-badge">
+            {portal.code}
+          </span>
           <button
             className={`pin-btn ${portal.pinned ? 'pinned' : ''}`}
             onClick={handlePin}
             title={portal.pinned ? 'Unpin from top bar' : 'Pin to top bar'}
           >
-            <Star size={16} fill={portal.pinned ? '#fbbf24' : 'none'} />
+            <Star size={15} fill={portal.pinned ? '#fbbf24' : 'none'} />
           </button>
         </div>
       </div>
 
-      <div className="card-body">
-        <div className="card-header-row">
+      <div className="compact-card-body">
+        <h3 className="compact-portal-title">
           <a
             href={portal.url}
             target="_blank"
@@ -64,37 +68,11 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
             className="portal-title-anchor"
           >
             <span>{portal.name}</span>
-            <ExternalLink size={18} className="anchor-external-icon" />
+            <ExternalLink size={16} className="anchor-external-icon" />
           </a>
-          <span className="portal-code-badge">
-            {portal.code}
-          </span>
-        </div>
+        </h3>
 
-        <p className="portal-desc">{portal.description}</p>
-
-        {portal.quickLinks && portal.quickLinks.length > 0 && (
-          <div className="quick-links-section">
-            <div className="quick-links-title">Quick Actions</div>
-            <div className="quick-links-grid">
-              {portal.quickLinks.map((link, idx) => (
-                <a
-                  key={idx}
-                  href={link.path}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="quick-link-chip"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <span>{link.label}</span>
-                  <ExternalLink size={10} />
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
-
-        <div className="card-actions">
+        <div className="card-actions compact-actions">
           <a
             href={portal.url}
             target="_blank"
@@ -102,16 +80,8 @@ export default function PortalCard({ portal, onTogglePin, onOpenDetail }) {
             className="launch-btn"
           >
             <span>Launch Portal</span>
-            <ExternalLink size={16} />
+            <ExternalLink size={15} />
           </a>
-
-          <button
-            className="action-icon-btn"
-            onClick={handleCopyLink}
-            title={copied ? 'Link Copied!' : 'Copy Portal URL'}
-          >
-            {copied ? <Check size={18} style={{ color: '#10b981' }} /> : <Copy size={18} />}
-          </button>
 
           <button
             className="action-icon-btn"

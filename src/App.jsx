@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import Navbar from './components/Navbar';
-import HeroBanner from './components/HeroBanner';
 import FavoritesBar from './components/FavoritesBar';
 import SearchAndFilterBar from './components/SearchAndFilterBar';
 import PortalCard from './components/PortalCard';
@@ -88,7 +87,7 @@ export default function App() {
       if (searchQuery.trim()) {
         const query = searchQuery.toLowerCase();
         const nameMatch = portal.name.toLowerCase().includes(query);
-        const descMatch = portal.description.toLowerCase().includes(query);
+        const descMatch = portal.description?.toLowerCase().includes(query);
         const categoryMatch = portal.category.toLowerCase().includes(query);
         const codeMatch = portal.code.toLowerCase().includes(query);
         const featureMatch = portal.features?.some((f) => f.toLowerCase().includes(query));
@@ -112,11 +111,6 @@ export default function App() {
       />
 
       <main className="main-content">
-        <HeroBanner
-          totalPortals={portals.length}
-          activeCategory={selectedCategory}
-        />
-
         <FavoritesBar
           pinnedPortals={pinnedPortals}
           onSelectPortal={(portal) => setDetailPortal(portal)}

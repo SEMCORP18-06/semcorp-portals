@@ -1,20 +1,28 @@
-import React, { useState } from 'react';
-import { ExternalLink, Star, Copy, Check, Info } from 'lucide-react';
+import React from 'react';
+import { 
+  ExternalLink, 
+  Star, 
+  Info, 
+  HelpCircle, 
+  Wrench, 
+  FileText, 
+  Users, 
+  Globe 
+} from 'lucide-react';
+
+const PORTAL_ICONS = {
+  HelpCircle: HelpCircle,
+  Wrench: Wrench,
+  FileText: FileText,
+  Users: Users
+};
 
 export default function PortalListItem({ portal, onTogglePin, onOpenDetail }) {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyLink = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    navigator.clipboard.writeText(portal.url);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+  const IconComponent = PORTAL_ICONS[portal.iconName] || Globe;
 
   return (
     <div 
-      className="portal-list-item"
+      className="portal-list-item compact-list-item"
       style={{ 
         '--card-accent': portal.accentColor,
         '--card-accent-light': portal.accentLight || portal.accentColor,
@@ -23,12 +31,12 @@ export default function PortalListItem({ portal, onTogglePin, onOpenDetail }) {
       }}
     >
       <div className="list-item-main">
-        <div className="list-item-icon">
-          {portal.code}
+        <div className="portal-symbol-icon-wrapper list-symbol">
+          <IconComponent size={22} className="portal-symbol-icon" />
         </div>
 
         <div className="list-item-text">
-          <h3>
+          <h3 style={{ margin: 0 }}>
             <a 
               href={portal.url} 
               target="_blank" 
@@ -36,28 +44,24 @@ export default function PortalListItem({ portal, onTogglePin, onOpenDetail }) {
               className="portal-title-anchor"
               style={{ fontSize: '1.15rem' }}
             >
-              {portal.name}
+              <span>{portal.name}</span>
+              <ExternalLink size={15} className="anchor-external-icon" />
             </a>
           </h3>
-          <p>{portal.description}</p>
         </div>
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <span className="portal-code-badge">
+          {portal.code}
+        </span>
+
         <button
           className={`pin-btn ${portal.pinned ? 'pinned' : ''}`}
           onClick={() => onTogglePin(portal.id)}
           title={portal.pinned ? 'Unpin' : 'Pin'}
         >
-          <Star size={16} fill={portal.pinned ? '#fbbf24' : 'none'} />
-        </button>
-
-        <button
-          className="action-icon-btn"
-          onClick={handleCopyLink}
-          title={copied ? 'Copied' : 'Copy URL'}
-        >
-          {copied ? <Check size={18} style={{ color: '#10b981' }} /> : <Copy size={18} />}
+          <Star size={15} fill={portal.pinned ? '#fbbf24' : 'none'} />
         </button>
 
         <button
@@ -73,10 +77,10 @@ export default function PortalListItem({ portal, onTogglePin, onOpenDetail }) {
           target="_blank"
           rel="noopener noreferrer"
           className="launch-btn"
-          style={{ padding: '0.6rem 1rem' }}
+          style={{ padding: '0.6rem 1.1rem' }}
         >
           <span>Launch</span>
-          <ExternalLink size={15} />
+          <ExternalLink size={14} />
         </a>
       </div>
     </div>

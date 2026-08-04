@@ -6,7 +6,7 @@ export const INITIAL_PORTALS = [
     category: 'Sales & Enquiries',
     categoryKey: 'sales',
     url: 'https://semcorpemp.vercel.app/',
-    image: '/assets/enquiry_portal.jpg',
+    iconName: 'HelpCircle',
     accentColor: '#00f2fe',
     accentLight: '#0284c7',
     badgeColor: 'rgba(0, 242, 254, 0.15)',
@@ -23,11 +23,6 @@ export const INITIAL_PORTALS = [
       'Lead Assignment & SLA Routing',
       'Real-time Status Dashboards'
     ],
-    quickLinks: [
-      { label: 'New Enquiry', path: 'https://semcorpemp.vercel.app/' },
-      { label: 'Track Status', path: 'https://semcorpemp.vercel.app/' },
-      { label: 'Client Directory', path: 'https://semcorpemp.vercel.app/' }
-    ],
     pinned: true,
     isOfficial: true
   },
@@ -38,7 +33,7 @@ export const INITIAL_PORTALS = [
     category: 'Technical & Field Support',
     categoryKey: 'service',
     url: 'https://service.semcogroups.com/',
-    image: '/assets/service_portal.jpg',
+    iconName: 'Wrench',
     accentColor: '#10b981',
     accentLight: '#059669',
     badgeColor: 'rgba(16, 185, 129, 0.15)',
@@ -55,11 +50,6 @@ export const INITIAL_PORTALS = [
       'Technician Dispatch Scheduling',
       'Warranty & Spares Tracking'
     ],
-    quickLinks: [
-      { label: 'File Ticket', path: 'https://service.semcogroups.com/' },
-      { label: 'Equipment Logs', path: 'https://service.semcogroups.com/' },
-      { label: 'Service Schedule', path: 'https://service.semcogroups.com/' }
-    ],
     pinned: true,
     isOfficial: true
   },
@@ -70,7 +60,7 @@ export const INITIAL_PORTALS = [
     category: 'Procurement & Supply Chain',
     categoryKey: 'procurement',
     url: 'https://semco-groups-procurement.vercel.app/',
-    image: '/assets/rfq_portal.jpg',
+    iconName: 'FileText',
     accentColor: '#8b5cf6',
     accentLight: '#7c3aed',
     badgeColor: 'rgba(139, 92, 246, 0.15)',
@@ -87,11 +77,6 @@ export const INITIAL_PORTALS = [
       'Purchase Order Workflows',
       'Material Bill of Quantities'
     ],
-    quickLinks: [
-      { label: 'Create RFQ', path: 'https://semco-groups-procurement.vercel.app/' },
-      { label: 'Vendor Bids', path: 'https://semco-groups-procurement.vercel.app/' },
-      { label: 'PO Approval Desk', path: 'https://semco-groups-procurement.vercel.app/' }
-    ],
     pinned: true,
     isOfficial: true
   },
@@ -102,7 +87,7 @@ export const INITIAL_PORTALS = [
     category: 'Human Capital & People Ops',
     categoryKey: 'hrms',
     url: 'https://semcorp-hrms-portal.vercel.app/',
-    image: '/assets/hrms_portal.jpg',
+    iconName: 'Users',
     accentColor: '#f97316',
     accentLight: '#ea580c',
     badgeColor: 'rgba(249, 115, 22, 0.15)',
@@ -118,11 +103,6 @@ export const INITIAL_PORTALS = [
       'Payroll & Salary Slips',
       'Employee Directory & Org Tree',
       'Performance Review System'
-    ],
-    quickLinks: [
-      { label: 'Apply Leave', path: 'https://semcorp-hrms-portal.vercel.app/' },
-      { label: 'My Payslips', path: 'https://semcorp-hrms-portal.vercel.app/' },
-      { label: 'Team Directory', path: 'https://semcorp-hrms-portal.vercel.app/' }
     ],
     pinned: true,
     isOfficial: true
