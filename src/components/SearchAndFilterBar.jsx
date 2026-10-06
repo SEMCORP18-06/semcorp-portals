@@ -8,7 +8,8 @@ import {
   Wrench, 
   ShoppingBag, 
   Users, 
-  Bookmark 
+  Bookmark,
+  ClipboardList 
 } from 'lucide-react';
 import { CATEGORIES } from '../data/portalsData';
 
@@ -18,7 +19,8 @@ const ICON_MAP = {
   Wrench: Wrench,
   ShoppingBag: ShoppingBag,
   Users: Users,
-  Bookmark: Bookmark
+  Bookmark: Bookmark,
+  ClipboardList: ClipboardList
 };
 
 export default function SearchAndFilterBar({

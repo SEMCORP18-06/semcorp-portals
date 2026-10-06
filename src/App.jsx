@@ -15,9 +15,9 @@ export default function App() {
     return localStorage.getItem('semcorp_theme') || 'dark';
   });
 
-  // Portals State with storage version v17 to force live cache refresh for user 3D Octane render banners
+  // Portals State with storage version v18 to force live cache refresh for Work Order portal
   const [portals, setPortals] = useState(() => {
-    const saved = localStorage.getItem('semcorp_portals_v17');
+    const saved = localStorage.getItem('semcorp_portals_v18');
     if (saved) {
       try {
         return JSON.parse(saved);
@@ -44,9 +44,9 @@ export default function App() {
     localStorage.setItem('semcorp_theme', theme);
   }, [theme]);
 
-  // Persist portals to localStorage v17
+  // Persist portals to localStorage v18
   useEffect(() => {
-    localStorage.setItem('semcorp_portals_v17', JSON.stringify(portals));
+    localStorage.setItem('semcorp_portals_v18', JSON.stringify(portals));
   }, [portals]);
 
   // Keyboard shortcut listener ('/' to focus search)

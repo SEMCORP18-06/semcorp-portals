@@ -114,6 +114,35 @@ export const INITIAL_PORTALS = [
     ],
     pinned: true,
     isOfficial: true
+  },
+  {
+    id: 'workorder-portal',
+    name: 'Work Order Portal',
+    code: 'WKO',
+    category: 'Work Orders & Operations',
+    categoryKey: 'workorder',
+    url: 'https://workordersemco.vercel.app/',
+    bannerImg: '/assets/semcorp_workorder_banner.jpg',
+    symbolImg: '/assets/semcorp_workorder_symbol.jpg',
+    iconName: 'ClipboardList',
+    accentColor: '#06b6d4',
+    accentLight: '#0284c7',
+    badgeColor: 'rgba(6, 182, 212, 0.15)',
+    badgeColorLight: '#cffafe',
+    borderColor: 'rgba(6, 182, 212, 0.3)',
+    borderColorLight: '#a5f3fc',
+    launchBgLight: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
+    status: 'Operational',
+    uptime: '99.96%',
+    description: 'Automated work order and job order management system featuring Offer PDF data extraction, structured work order generation, and client order history tracking.',
+    features: [
+      'Offer PDF Data Extraction',
+      'Structured Work Order Generation',
+      'Order History & Client Tracking',
+      'Production & Job Scheduling'
+    ],
+    pinned: true,
+    isOfficial: true
   }
 ];
 
@@ -122,5 +151,6 @@ export const CATEGORIES = [
   { key: 'sales', label: 'Sales & Enquiries', icon: 'MessageSquare' },
   { key: 'service', label: 'Technical Support', icon: 'Wrench' },
   { key: 'procurement', label: 'Procurement & RFQ', icon: 'ShoppingBag' },
-  { key: 'hrms', label: 'Human Resources', icon: 'Users' }
+  { key: 'hrms', label: 'Human Resources', icon: 'Users' },
+  { key: 'workorder', label: 'Work Orders & Operations', icon: 'ClipboardList' }
 ];

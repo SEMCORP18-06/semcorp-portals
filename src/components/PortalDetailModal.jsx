@@ -35,7 +35,7 @@ export default function PortalDetailModal({ portal, onClose }) {
         <div className="modal-body">
           <div style={{ height: '160px', borderRadius: '12px', overflow: 'hidden', marginBottom: '1.25rem' }}>
             <img 
-              src={portal.image} 
+              src={portal.bannerImg || portal.image} 
               alt={portal.name} 
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
